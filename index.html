@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FocusShuffle — تطبيق أندرويد مجاني يكسر التصفح الآلي</title>
+<meta name="description" content="FocusShuffle تطبيق أندرويد مجاني بلا إعلانات ولا إنترنت. يخلط أيقونات تطبيقاتك المشتتة في كل مرة فتتحول من عادة آلية إلى قرار واعٍ. حمّل ملف APK مباشرة.">
+<meta name="theme-color" content="#11121a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FocusShuffle — اكسر التصفح الآلي">
+<meta property="og:description" content="تطبيقاتك المشتتة تغيّر مكانها في كل مرة. مجاني، بلا إعلانات، بلا إنترنت.">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+
+<header class="top" id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="FocusShuffle"><img src="favicon.svg" alt="" width="34" height="34"><span>FocusShuffle</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">القائمة</button>
+    <nav id="nav" aria-label="التنقل الرئيسي">
+      <a href="#science">لماذا يعمل</a>
+      <a href="#use">طريقة الاستعمال</a>
+      <a href="#hide">إخفاء التطبيقات</a>
+      <a href="#widget">إضافة الأداة</a>
+      <a href="#features">كل الميزات</a>
+      <a href="#faq">أسئلة</a>
+      <a class="btn small" href="#download">تحميل</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>تطبيقاتك المشتتة <br>تغيّر مكانها في كل مرة</h1>
+      <p class="lead">يدك تعرف مكان الأيقونة قبل أن تقرر. FocusShuffle يخلط أماكنها بعد كل فتح، فيتحول الفتح الآلي إلى قرار. مجاني، بلا إعلانات، ويعمل دون إنترنت.</p>
+      <div class="cta-row">
+        <a class="btn big" href="FocusShuffle-v0.6.1.apk" download data-download>
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3v10.2l3.6-3.6 1.4 1.4-6 6-6-6 1.4-1.4 3.6 3.6V3h2zM5 19h14v2H5z"/></svg>
+          حمّل التطبيق (APK)
+        </a>
+        <a class="btn ghost big" href="#science">لماذا يعمل؟</a>
+      </div>
+      <p class="meta-line">الإصدار 0.6.1 · 1.3 ميغابايت · أندرويد 8.0 فأحدث</p>
+      <ul class="chips" aria-label="مميزات سريعة">
+        <li>مجاني بالكامل</li><li>بلا إعلانات</li><li>بلا إذن إنترنت</li><li>بلا حساب</li>
+      </ul>
+    </div>
+    <div class="demo" aria-label="تجربة الخلط">
+      <div class="demo-grid" id="demoGrid" role="img" aria-label="شبكة أيقونات تتبدل أماكنها"></div>
+      <div class="demo-bar">
+        <button class="btn" id="shuffleBtn" type="button">اخلط</button>
+        <span id="demoCount">عدد مرات الخلط: 0</span>
+      </div>
+      <p class="demo-note">هذا مجرد عرض تجريبي. في التطبيق تُخلط أيقونات تطبيقاتك الحقيقية داخل أداة على شاشتك الرئيسية.</p>
+    </div>
+  </div>
+</section>
+
+<section class="facts">
+  <div class="wrap facts-grid">
+    <div><b>8</b><span>صفحات تطبيقات</span></div>
+    <div><b>40</b><span>تطبيقاً في الصفحة</span></div>
+    <div><b>200+</b><span>نصيحة صحة رقمية</span></div>
+    <div><b>32</b><span>إنجازاً</span></div>
+    <div><b>0</b><span>إعلانات وتتبع</span></div>
+  </div>
+</section>
+
+<section class="screens" aria-label="لقطات من التطبيق">
+  <div class="wrap">
+    <h2>هكذا يبدو التطبيق</h2>
+    <div class="phones">
+      <figure class="phone"><img src="img-screen-arrange.webp" alt="شاشة ترتيب أيقونات الصفحة" loading="lazy"><figcaption>رتّب كل صفحة وثبّت ما تريد</figcaption></figure>
+      <figure class="phone mid"><img src="img-screen-home.webp" alt="الشاشة الرئيسية وفيها درجة العقل" loading="lazy"><figcaption>درجة عقلك وأرقام يومك</figcaption></figure>
+      <figure class="phone"><img src="img-screen-focus.webp" alt="جلسات التركيز وتحدي اليوم" loading="lazy"><figcaption>جلسات تركيز وتحدٍّ يومي</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="science">
+  <div class="wrap">
+    <h2>لماذا يعمل؟ ماذا يفعل التمرير بدماغك</h2>
+    <p class="sec-lead">لا يحتاج الأمر لقوة إرادة خارقة. يكفي أن نفهم كيف تُبنى العادة، ثم نضع عقبة صغيرة في المكان الصحيح.</p>
+
+    <div class="loop" aria-label="حلقة العادة">
+      <div class="node"><h3>المحفّز</h3><p>ملل، أو لحظة انتظار، أو إشعار، أو يد تمتد للهاتف دون سبب.</p></div>
+      <div class="arrow" aria-hidden="true">←</div>
+      <div class="node"><h3>الروتين</h3><p>الإبهام يذهب إلى مكان الأيقونة المحفوظ. لا تفكير، ولا قرار.</p></div>
+      <div class="arrow" aria-hidden="true">←</div>
+      <div class="node"><h3>المكافأة المتغيرة</h3><p>مرة تجد مقطعاً طريفاً أو رسالة، ومرة لا تجد شيئاً. وعدم اليقين هو ما يشدك.</p></div>
+      <div class="arrow" aria-hidden="true">←</div>
+      <div class="node"><h3>التكرار</h3><p>كلما تكررت الحلقة صارت أسرع وأقل وعياً.</p></div>
+    </div>
+
+    <div class="cols">
+      <article>
+        <h3>الدوبامين: إشارة توقّع لا «هرمون السعادة»</h3>
+        <p>شاع أن الدوبامين هو «هرمون المتعة»، لكن الأبحاث ترجّح أنه أقرب إلى إشارة <b>توقّع ودافع</b>: يدفعك لتسعى وراء الشيء أكثر مما يمنحك لذته نفسها. وتُظهر الدراسات أن إشارته تقوى عندما تكون المكافأة <b>غير متوقعة</b>، أي عندما يختلف ما حدث عما توقعته.</p>
+        <p>وهذا بالضبط ما تقدمه خلاصات التمرير: مكافأة متغيرة لا تعرف متى تأتي. وقد وصف سكينر قديماً أن هذا النوع من جداول المكافأة أصعب أنواع العادات في الانطفاء، وهو النمط الذي تقوم عليه ماكينات القمار. النتيجة أن يدك تتحرك لتفتح التطبيق «لعلّ شيئاً هناك»، قبل أن تسأل نفسك هل تريد ذلك.</p>
+      </article>
+      <article>
+        <h3>جهد العقل: الآلي رخيص والواعي مكلف</h3>
+        <p>يعمل العقل بنظامين تقريباً: نظام سريع تلقائي يحتاج جهداً ضئيلاً، ونظام بطيء واعٍ يستهلك انتباهاً وطاقة. العادة هي أن ينتقل السلوك من الثاني إلى الأول، فيرتبط بمكان وسياق ثابت: <b>الأيقونة في موضعها</b>.</p>
+        <p>عندما يتغير الموضع لا تجد الذاكرة العضلية هدفها. تضطر لأن تنظر وتبحث، وهنا يشتغل النظام الواعي ويظهر السؤال: <b>«ماذا أريد أن أفعل الآن؟»</b>. هذا الجهد الصغير ليس عقاباً؛ هو الثانية التي كانت العادة تسرقها منك.</p>
+      </article>
+    </div>
+
+    <div class="mech">
+      <h3>كيف يتدخل FocusShuffle في كل مرحلة</h3>
+      <table>
+        <thead><tr><th>الآلية</th><th>ما يحدث في عقلك</th><th>ما يفعله التطبيق</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">الاحتكاك</th><td>الذاكرة العضلية تفشل فيبدأ البحث الواعي</td><td>يخلط الأيقونات، ويمكنه جعل كل أيقونات الصفحة بصورة واحدة وأسماء فقط لجهد أكبر</td></tr>
+          <tr><th scope="row">الوعي</th><td>العادة الخفية تصبح مرئية فتقل قوتها</td><td>يعدّ مرات الفتح، ويعطيك درجة العقل والمخطط الأسبوعي والتقرير الأسبوعي</td></tr>
+          <tr><th scope="row">وقفة وسؤال</th><td>الرغبة تخفت خلال ثوانٍ إن لم تُلبَّ فوراً</td><td>عدّ تنازلي وسؤال «هل أحتاجه أم أشعر بالملل؟» وانتظار أطول للتطبيقات الأشد تشتيتاً</td></tr>
+          <tr><th scope="row">البديل</th><td>الدافع يحتاج مخرجاً، لا مجرد منع</td><td>يقترح بدائل تكتبها بنفسك، وزر تنفس دقيقة بست أنفاس بطيئة</td></tr>
+          <tr><th scope="row">الحدود والراحة</th><td>قلة النوم والإجهاد يضعفان الانضباط</td><td>حدود يومية وجلسات تركيز وتذكير نوم وراحة عين وماء وحركة</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <aside class="honest">
+      <h3>ما لا نزعمه</h3>
+      <p>FocusShuffle لا يعالج إدماناً ولا يشخّص حالة طبية، ودرجة العقل مؤشر تحفيزي وليست اختبار ذكاء. التطبيق لا يمنع شيئاً بالقوة: هو يجعل الاختيار الآلي أصعب قليلاً والاختيار الواعي أسهل قليلاً. والنتائج تختلف من شخص لآخر. إن كان استخدام الهاتف يضر بحياتك أو نومك بشدة فاستشر مختصاً.</p>
+    </aside>
+
+    <details class="refs">
+      <summary>مراجع للاستزادة</summary>
+      <ul>
+        <li>Schultz, Dayan &amp; Montague (1997). A neural substrate of prediction and reward. <i>Science</i>.</li>
+        <li>Berridge &amp; Robinson (1998). What is the role of dopamine in reward: hedonic impact, reward learning, or incentive salience? <i>Brain Research Reviews</i>.</li>
+        <li>Ferster &amp; Skinner (1957). <i>Schedules of Reinforcement</i>.</li>
+        <li>Wood &amp; Neal (2007). A new look at habits and the habit-goal interface. <i>Psychological Review</i>.</li>
+        <li>Kahneman (2011). <i>Thinking, Fast and Slow</i>.</li>
+        <li>Hunt et al. (2018). No more FOMO: limiting social media decreases loneliness and depression. <i>Journal of Social and Clinical Psychology</i>.</li>
+      </ul>
+    </details>
+  </div>
+</section>
+
+<section class="block alt" id="use">
+  <div class="wrap">
+    <h2>طريقة الاستعمال في أربع خطوات</h2>
+    <ol class="steps">
+      <li><h3>اختر تطبيقاتك</h3><p>افتح تبويب «التطبيقات» واضغط على التطبيقات التي تجذبك (حتى 40 في الصفحة)، أو اضغط «اختر المشتتة تلقائياً». أنشئ صفحات أخرى بزر ＋ لحالات مختلفة: تواصل، فيديو، ألعاب.</p></li>
+      <li><h3>أضف الأداة</h3><p>من الرئيسية اضغط «إضافة الأداة». التفاصيل في <a href="#widget">قسم إضافة الأداة</a>.</p></li>
+      <li><h3>أبعد الأيقونات الأصلية</h3><p>هذه الخطوة هي التي تجعل التطبيق يعمل: إن بقيت الأيقونات الحقيقية في مكانها ستفتحها بالعادة. اقرأ <a href="#hide">طرق الإخفاء والتجميع</a>.</p></li>
+      <li><h3>افتح من الأداة فقط</h3><p>كل فتح يخلط الصفحة افتراضياً، ويمكنك تغيير ذلك: بعد عدة مرات فتح، أو بمؤقت، أو عند فتح القفل.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block" id="hide">
+  <div class="wrap">
+    <h2>إخفاء التطبيقات الأصلية أو تجميعها بعيداً</h2>
+    <p class="sec-lead">الفكرة: يجب ألا تبقى أيقونة تيك توك أو إنستغرام في مكانها المعتاد على شاشتك. أبعدها، أو اجمعها في مجلد في آخر صفحة. هذا لا يحذف التطبيقات ولا بياناتها، وتبقى تعمل ويمكنك فتحها من الأداة.</p>
+
+    <div class="tabs" role="tablist" aria-label="طرق الإخفاء">
+      <button role="tab" aria-selected="true" aria-controls="p-folder" id="t-folder">الأسهل: مجلد في صفحة بعيدة</button>
+      <button role="tab" aria-selected="false" aria-controls="p-samsung" id="t-samsung" tabindex="-1">سامسونج</button>
+      <button role="tab" aria-selected="false" aria-controls="p-pixel" id="t-pixel" tabindex="-1">بيكسل وأندرويد الصافي</button>
+      <button role="tab" aria-selected="false" aria-controls="p-other" id="t-other" tabindex="-1">شاومي وغيرها</button>
+      <button role="tab" aria-selected="false" aria-controls="p-private" id="t-private" tabindex="-1">إخفاء أقوى</button>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-folder" aria-labelledby="t-folder">
+      <h3>اجمعها في ملف (مجلد) واحد وضعه بعيداً</h3>
+      <ol>
+        <li>اضغط مطولاً على أول أيقونة مشتتة في الشاشة الرئيسية.</li>
+        <li>اسحبها فوق أيقونة مشتتة ثانية ثم ارفع إصبعك: يُنشأ مجلد تلقائياً.</li>
+        <li>اسحب بقية التطبيقات المشتتة إلى المجلد نفسه.</li>
+        <li>أعطِ المجلد اسماً مملاً مثل «أدوات» (اضغط على المجلد ثم على اسمه).</li>
+        <li>اسحب المجلد إلى <b>آخر صفحة</b> بعيدة عن الصفحة الأولى. كلما صعب الوصول إليه كان أفضل.</li>
+        <li>احذف الأيقونات الأصلية من الصفحات الأولى إن بقيت أي منها (اضغط مطولاً ← «إزالة»، وليس «إلغاء التثبيت»).</li>
+      </ol>
+      <p class="tip">الفرق مهم: <b>إزالة</b> تزيل الاختصار فقط وتبقى التطبيق في قائمة التطبيقات. <b>إلغاء التثبيت</b> يحذف التطبيق نفسه.</p>
+    </div>
+    <div class="panel" role="tabpanel" id="p-samsung" aria-labelledby="t-samsung" hidden>
+      <h3>سامسونج (One UI): إخفاء من الشاشتين</h3>
+      <ol>
+        <li>الإعدادات ← الشاشة الرئيسية.</li>
+        <li>اختر «إخفاء التطبيقات».</li>
+        <li>حدد التطبيقات المشتتة ثم «تم».</li>
+      </ol>
+      <p class="tip">تختفي من الشاشة الرئيسية ومن شاشة التطبيقات، ويبقى فتحها ممكناً من أداة FocusShuffle. لإعادتها ارجع إلى الخيار نفسه وأزل التحديد. قد تختلف أسماء الخيارات قليلاً بحسب الإصدار.</p>
+    </div>
+    <div class="panel" role="tabpanel" id="p-pixel" aria-labelledby="t-pixel" hidden>
+      <h3>بيكسل وأندرويد الصافي</h3>
+      <ol>
+        <li>اضغط مطولاً على الأيقونة في الشاشة الرئيسية واختر «إزالة» لإزالة الاختصار فقط.</li>
+        <li>في قائمة كل التطبيقات (اسحب للأعلى) ستجدها ما زالت موجودة. ضعها في مجلد بالطريقة السابقة أو استعمل «الفراغ الخاص» أدناه.</li>
+      </ol>
+      <p class="tip">مشغّل بيكسل لا يملك خيار إخفاء مباشراً في أغلب الإصدارات. «الفراغ الخاص» (Private space) في أندرويد 15 وما بعده يحل ذلك.</p>
+    </div>
+    <div class="panel" role="tabpanel" id="p-other" aria-labelledby="t-other" hidden>
+      <h3>شاومي وأوبو وفيفو وغيرها</h3>
+      <ol>
+        <li>افتح إعدادات الشاشة الرئيسية (اضغط مطولاً على مساحة فارغة ← الإعدادات، أو من إعدادات الهاتف ← الشاشة الرئيسية).</li>
+        <li>ابحث عن خيار مثل «إخفاء التطبيقات» أو «App hide» وفعّله واختر التطبيقات. قد يطلب منك نمطاً أو بصمة.</li>
+        <li>إن لم تجد الخيار فاستعمل طريقة المجلد في الصفحة البعيدة.</li>
+      </ol>
+      <p class="tip">الأسماء تختلف بحسب الشركة والإصدار؛ اكتب «إخفاء التطبيقات» في بحث الإعدادات.</p>
+    </div>
+    <div class="panel" role="tabpanel" id="p-private" aria-labelledby="t-private" hidden>
+      <h3>إخفاء أقوى (لمن يغلبه الاستعجال)</h3>
+      <ul>
+        <li><b>الفراغ الخاص (Private space):</b> متوفر في أندرويد 15 وما بعده على بعض الأجهزة. يخفي التطبيقات خلف قفل ويمكنك قفله كلياً.</li>
+        <li><b>المجلد الآمن (سامسونج):</b> ينقل نسخة معزولة من التطبيق ويقفلها. تنبيه: النسخة المعزولة لها بيانات منفصلة وقد تحتاج تسجيل الدخول من جديد.</li>
+        <li><b>أدوات الرفاهية الرقمية:</b> مؤقت التطبيقات ووضع التركيز في إعدادات أندرويد (Digital Wellbeing) يوقفان التطبيق مؤقتاً. تعمل مع FocusShuffle ولا تتعارض معه.</li>
+      </ul>
+      <p class="tip">ابدأ بالمجلد البعيد. لا تجعل الأمر مرهقاً لدرجة تتركه.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="widget">
+  <div class="wrap">
+    <h2>كيف تضيف الأداة (الويدجت) إلى شاشتك</h2>
+    <div class="two">
+      <div>
+        <h3>الطريقة الأولى: من التطبيق</h3>
+        <ol class="plain">
+          <li>افتح FocusShuffle وابقَ في تبويب «الرئيسية».</li>
+          <li>اضغط <b>«إضافة الأداة»</b> في بطاقة الحالة.</li>
+          <li>يظهر مربع من أندرويد يسأل عن إضافتها: وافق، أو اسحبها إلى المكان الذي تريده.</li>
+          <li>إن كانت لديك عدة صفحات فسيسألك التطبيق: <b>أي صفحة تريد أن تعرضها هذه الأداة؟</b> اختر واحدة.</li>
+        </ol>
+        <h3>الطريقة الثانية: من الشاشة الرئيسية</h3>
+        <ol class="plain">
+          <li>اضغط مطولاً على مساحة فارغة في الشاشة الرئيسية.</li>
+          <li>اختر «الأدوات» (Widgets).</li>
+          <li>ابحث عن <b>FocusShuffle</b> وأمسكه ثم اسحبه إلى الصفحة.</li>
+          <li>مدّد حواف الأداة لتغطي المساحة، ثم اضبط الصفوف والأعمدة في إعدادات التطبيق لتطابقها.</li>
+        </ol>
+      </div>
+      <div>
+        <figure class="shot slim"><img src="img-home-status.webp" alt="بطاقة الحالة وفيها زر إضافة الأداة" loading="lazy"></figure>
+        <h3>نصائح</h3>
+        <ul class="plain">
+          <li>خصص <b>صفحة رئيسية فارغة</b> للأداة وحدها، وأبعد عنها كل شيء آخر.</li>
+          <li>أداة واحدة لكل صفحة تطبيقات. لإضافة أداة لصفحة أخرى: تبويب «التطبيقات» ← «أداة لهذه الصفحة».</li>
+          <li>إن ظهر «مشغل الشاشة لا يدعم إضافة الأدوات من هنا» فاستعمل الطريقة الثانية.</li>
+        </ul>
+        <details class="fix"><summary>الأداة لا تعمل كما يجب؟</summary>
+          <ul>
+            <li>الأداة فارغة: اختر تطبيقات للصفحة التي تعرضها.</li>
+            <li>الأيقونات كبيرة أو صغيرة: غيّر حجم الأيقونة من الإعدادات.</li>
+            <li>الأداة لا تطابق الشبكة: اجعل الصفوف والأعمدة مساوية لما تغطيه.</li>
+            <li>صفحة خاطئة في الأداة: احذفها وأضفها من جديد ثم اختر الصفحة.</li>
+            <li>توقف الخلط عند فتح القفل أو التذكيرات: لا توقف التطبيق بالقوة، واسمح بالإشعارات.</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="features">
+  <div class="wrap">
+    <h2>الدليل الكامل للميزات</h2>
+    <p class="sec-lead">لكل ميزة: ماذا تفعل، وكيف تفعّلها، وكيف توقفها.</p>
+    <div class="legend">
+      <h3>كيف تقرأ الإعدادات</h3>
+      <ul>
+        <li><b>المفاتيح:</b> الدائرة الرمادية الفاتحة تعني أن الخيار <b>مفعّل</b>، والدائرة الداكنة تعني أنه <b>متوقف</b>.</li>
+        <li><b>المنزلقات:</b> بعضها يصل إلى «معطّل»، وهي الطريقة لإيقاف الخيار.</li>
+        <li>التغييرات تُحفظ فوراً.</li>
+      </ul>
+    </div>
+    <nav class="chips-nav" aria-label="أقسام الدليل"><a href="#g-home">الشاشة الرئيسية</a><a href="#g-apps">التطبيقات والصفحات</a><a href="#g-look">مظهر الأداة</a><a href="#g-when">متى يحدث الخلط</a><a href="#g-pause">التوقف والتنبيهات</a><a href="#g-brain">صحة الدماغ</a><a href="#g-notif">النصائح والإشعارات</a><a href="#g-extras">ميزات إضافية</a><a href="#g-backup">النسخ الاحتياطي وإعادة الضبط</a></nav>
+    <section class="fgroup" id="g-home"><header><h3>الشاشة الرئيسية</h3><p>كل ما تراه في تبويب «الرئيسية»: أرقامك وتحدياتك وأدوات التركيز.</p></header><article class="feat">
+<figure class="shot"><img src="img-home-status.webp" alt="الحالة والخلط الفوري داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>الحالة والخلط الفوري</h4><p>تعرض عدد الأدوات المضافة، وعدد الصفحات، وعدد التطبيقات المختارة. وفيها زران: «إضافة الأداة» و«اخلط الآن».</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>اضغط «اخلط الآن» لتُخلط كل الصفحات في الحال، أو «إضافة الأداة» لإضافة الويدجت إلى شاشتك.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>هما زران وليسا ميزتين تُفعَّلان؛ لا شيء يعمل إلا عند الضغط عليهما.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-home-brain.webp" alt="درجة عقلك اليوم داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>درجة عقلك اليوم</h4><p>رقم من 0 إلى 100 يلخّص يومك: يرتفع بمرات الامتناع ووقت التركيز، وينخفض إذا تجاوزت هدفك أو فتحت التطبيقات ليلاً. الدرجة العالية تسمّى «عقل صافٍ»، والمنخفضة «إنذار تعفن الدماغ». هي مؤشر تحفيزي، لا اختبار ذكاء ولا قياس طبي. التطبيقات المحايدة (الملاحظات، الملفات) لا تُحسب عليك. زر «شارك درجة اليوم» يرسلها لأصدقائك.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>تعمل تلقائياً ما دمت تفتح تطبيقاتك من الأداة. لتتغير حساباتها اضبط «هدف اليوم» ومستوى تشتيت كل تطبيق.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>لا يوجد مفتاح لإيقافها؛ تبدأ من جديد كل يوم، ويمكنك تجاهل البطاقة.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-home-focus.webp" alt="جلسة تركيز بلا هاتف داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>جلسة تركيز بلا هاتف</h4><p>اختر 15 أو 25 أو 45 أو 60 أو 90 أو 120 دقيقة. أثناء الجلسة تظهر شاشة توقف عند فتح أي تطبيق من الأداة. في نهايتها يصلك إشعار وتُسجَّل دقائق التركيز. وفيها زر «تنفس دقيقة»: ست أنفاس بطيئة مع دائرة متحركة، ويُحسب إكمالها مرة امتناع.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>اضغط على المدة التي تريدها من بطاقة «جلسة تركيز بلا هاتف».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>تنتهي الجلسة بانتهاء مدتها. لجعلها أصرم (بلا زر «افتح رغم ذلك») فعّل «جلسات تركيز صارمة» من الإعدادات &gt; صحة الدماغ.</dd></div></dl><p class="note">إشعار النهاية قد يتأخر بضع دقائق لأن التطبيق يستعمل منبهاً خفيفاً.</p></div></article><article class="feat">
+<figure class="shot"><img src="img-home-challenge.webp" alt="تحدي اليوم داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>تحدي اليوم</h4><p>تحدٍّ صغير كل يوم، مثل نصف ساعة أولى بلا هاتف أو وجبة بلا شاشة. عدّاد يعرض كم تحدياً أنجزت حتى الآن.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>اضغط «أنجزته» عندما تنتهي من التحدي.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>تجاهله ببساطة؛ يتغير التحدي في اليوم التالي.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-home-today.webp" alt="أرقام اليوم داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>أرقام اليوم</h4><p>مرات الفتح، ومرات الامتناع (حين ألغيت الفتح بعد التوقف)، وعدد عمليات الخلط. وتحتها هدفك اليومي مع عدد الأيام المتتالية التي بقيت فيها تحت الهدف.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>تعمل تلقائياً. غيّر الهدف من الإعدادات &gt; التوقف والتنبيهات &gt; «هدف اليوم».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>لا تُوقف؛ هي مجرد عرض.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-home-chart.webp" alt="آخر 7 أيام داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>آخر 7 أيام</h4><p>مخطط أعمدة لعدد مرات الفتح في كل يوم، فترى هل تتحسن أم لا بنظرة واحدة.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>تعمل تلقائياً.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>لا تُوقف.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-home-tip.webp" alt="نصيحة اليوم داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>نصيحة اليوم</h4><p>نصيحة قصيرة في الصحة الرقمية تتغير كل يوم.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>تظهر تلقائياً.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>لا تُوقف. لإيقاف نصائح الإشعارات انظر قسم «النصائح والإشعارات».</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-home-ach.webp" alt="الإنجازات داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>الإنجازات</h4><p>32 شارة موزعة على الامتناع، والسلاسل، والتركيز، والخلط، والعادات والأدوات، والعقل والوقت. انتصارات صغيرة تدفعك للاستمرار.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>تُفتح تلقائياً مع تقدمك. اضغط على عنوان «الإنجازات» لرؤية القائمة كاملة.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>لا تُوقف.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-home-free.webp" alt="مجاني ومصنوع ليُشارَك داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>مجاني ومصنوع ليُشارَك</h4><p>لا إعلانات ولا تتبع. إذا أفادك التطبيق فزر المشاركة يفتح قائمة المشاركة في هاتفك.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>اضغط «شاركه مع الأصدقاء».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>لا شيء يعمل من تلقاء نفسه.</dd></div></dl></div></article></section><section class="fgroup" id="g-apps"><header><h3>التطبيقات والصفحات</h3><p>من هنا تختار ما يدخل في الأداة وكيف يُرتَّب.</p></header><article class="feat">
+<figure class="shot"><img src="img-apps-top.webp" alt="الصفحات داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>الصفحات</h4><p>الصفحة مجموعة تطبيقات لها اسم (تواصل، فيديو، ألعاب...). يمكنك صنع حتى 8 صفحات. كل أداة تعرض صفحة واحدة، فتضع صفحات مختلفة على شاشات مختلفة. الأزرار: «أداة لهذه الصفحة» و«ترتيب» و«تسمية الصفحة» و«حذف الصفحة».</p><ul class="ctl"><li><b>＋</b><span>صفحة جديدة (حتى 8)</span></li><li><b>أداة لهذه الصفحة</b><span>يضيف ويدجت جديداً يعرض الصفحة المفتوحة</span></li><li><b>حذف الصفحة</b><span>تُحذف قائمة التطبيقات فقط، ولا يُحذف أي تطبيق من هاتفك</span></li></ul>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>افتح تبويب «التطبيقات» ثم اضغط ＋ لصفحة جديدة.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>اضغط «حذف الصفحة». لا بد أن تبقى صفحة واحدة على الأقل.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-apps-list.webp" alt="اختيار التطبيقات داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>اختيار التطبيقات</h4><p>اضغط على أي تطبيق لإضافته إلى الصفحة أو إزالته. يمكن اختيار حتى 40 تطبيقاً في الصفحة. تعرض الأداة بقدر ما تتسع له الصفوف × الأعمدة، وإذا اخترت أكثر مما يتسع فكل خلط يُظهر مجموعة مختلفة. زر «اختر المشتتة تلقائياً» يضيف التطبيقات المعروفة بتشتيتها، و«مسح» يفرّغ الصفحة.</p><ul class="ctl"><li><b>⋮ بجانب التطبيق</b><span>غيّر أيقونته (من صورك) أو اسمه، أو مستوى تشتيته من محايد إلى عالٍ جداً</span></li><li><b>محايد</b><span>يفتح فوراً بلا توقف ولا تنبيه، ولا يؤثر على درجة العقل (مثل الملاحظات وأدوات الملفات)</span></li></ul>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>اضغط على التطبيق (الدائرة تمتلئ).</dd></div><div class="off"><dt>كيف توقفه</dt><dd>اضغط عليه مرة أخرى، أو «مسح» لإفراغ الصفحة.</dd></div></dl></div></article><article class="feat tall">
+<figure class="shot"><img src="img-screen-arrange.webp" alt="الترتيب والتثبيت داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>الترتيب والتثبيت</h4><p>في «ترتيب» اضغط مطولاً على أيقونة واسحبها فوق أخرى للتبديل، أو فوق خانة فارغة لنقلها (الخانات الفارغة تبقى فارغة عند الخلط). اضغط على أيقونة لتثبيتها 📌 فتحتفظ بمكانها وقت الخلط. أزرار: «اخلط الآن»، «إلغاء التثبيت»، «إزالة الفراغات»، «شكل الأيقونات». «شكل الأيقونات» يجعل كل تطبيقات الصفحة بصورة واحدة (افتراضية أو شفافة أو صورة تختارها) فتضطر لقراءة الأسماء بدل التعرف على الأيقونة، وهذا جهد إضافي يقتل التصفح الآلي.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>تبويب «التطبيقات» ← «ترتيب». عند الانتهاء اضغط «تم».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>«إلغاء التثبيت» يفك كل التثبيتات، واختر «الأيقونات الحقيقية» للعودة للشكل العادي.</dd></div></dl><p class="note">أدوات أندرويد لا تقبل السحب مباشرة على الشاشة الرئيسية، لذلك يتم الترتيب داخل التطبيق وتتحدث الأداة فوراً.</p></div></article></section><section class="fgroup" id="g-look"><header><h3>مظهر الأداة</h3><p>الإعدادات ← «مظهر الأداة». التغييرات تظهر في الأداة فوراً.</p></header><article class="feat">
+<figure class="shot"><img src="img-set-look-size.webp" alt="الحجم والشبكة والخلفية داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>الحجم والشبكة والخلفية</h4><p>اجعل الأداة تطابق شاشتك تماماً. حجم 56 dp يطابق أغلب أيقونات المشغلات، ويمكن الوصول إلى 128 dp. إذا صغرت الأداة (مثلاً عند تدوير الشاشة) تعيد الشبكة ترتيب نفسها.</p><ul class="ctl"><li><b>حجم الأيقونة</b><span>حتى 128 dp</span></li><li><b>الأعمدة والصفوف</b><span>اجعلها مساوية لما تغطيه الأداة على شاشتك</span></li><li><b>عتمة الخلفية</b><span>0% = شفافة تماماً</span></li></ul>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>حرّك المنزلقات؛ ترى النتيجة في الأداة مباشرة.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>الإعدادات ← «إعادة ضبط المظهر» تعيد كل شيء للافتراضي.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-set-look-toggles.webp" alt="الأسماء وزر الخلط داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>الأسماء وزر الخلط</h4><p>تحكم في ما يظهر فوق الأيقونات.</p><ul class="ctl"><li><b>إظهار أسماء التطبيقات</b><span>يضيف اسم كل تطبيق تحت أيقونته</span></li><li><b>أسماء بيضاء</b><span>عطّلها للخلفيات الفاتحة</span></li><li><b>زر الخلط على الأداة</b><span>يضيف شريطاً صغيراً في أعلى الأداة تضغطه لتخلط</span></li></ul>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>المفتاح بدائرة رمادية فاتحة = مفعّل، والدائرة الداكنة = متوقف. اضغط المفتاح لتفعيل الخيار.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>اضغطه مرة أخرى.</dd></div></dl></div></article></section><section class="fgroup" id="g-when"><header><h3>متى يحدث الخلط</h3><p>الإعدادات ← «متى يحدث الخلط». اجمع بين الخيارات كما تشاء؛ كل صفحة تُخلط بشكل مستقل.</p></header><article class="feat">
+<figure class="shot"><img src="img-set-when.webp" alt="أربع طرق للخلط داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>أربع طرق للخلط</h4><p>الافتراضي أن كل فتح يخلط الصفحة. ويمكنك اختيار ما يناسبك.</p><ul class="ctl"><li><b>بعد عدد مرات فتح</b><span>مثلاً بعد كل 3 مرات. المنزلق على «معطّل» يعني أن هذا الخيار متوقف</span></li><li><b>بمؤقت زمني</b><span>من 5 دقائق إلى 8 ساعات</span></li><li><b>اخلط عند فتح القفل</b><span>يخلط كل الصفحات حين تفتح قفل الهاتف. يحتاج إشعاراً صامتاً صغيراً دائماً لأن خدمة صغيرة تستمع لفتح القفل</span></li><li><b>اخلط عند تحديث المشغل</b><span>تقريباً كل 30 دقيقة وعند إعادة تشغيل المشغل</span></li></ul>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>حرّك المنزلق لقيمة، أو شغّل المفتاح. المفتاح بدائرة رمادية فاتحة = مفعّل، والدائرة الداكنة = متوقف.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>اسحب المنزلق حتى تظهر كلمة «معطّل». أو أطفئ المفتاح.</dd></div></dl><p class="note">لا توقف التطبيق بالقوة من إعدادات النظام، وإلا توقف الخلط عند فتح القفل والتذكيرات.</p></div></article></section><section class="fgroup" id="g-pause"><header><h3>التوقف والتنبيهات</h3><p>الإعدادات ← «التوقف والتنبيهات». تظهر شاشة تنبيه قبل فتح التطبيق فيها رسالة وانتظار قصير، ويمكنك دائماً اختيار الفتح رغم ذلك.</p></header><article class="feat">
+<figure class="shot"><img src="img-set-pause-a.webp" alt="توقف واعٍ وحجب بشاشة داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>توقف واعٍ وحجب بشاشة</h4><p>عدّ تنازلي قصير قبل فتح أي تطبيق. إذا ألغيت الفتح تُحسب مرة امتناع.</p><ul class="ctl"><li><b>توقف واعٍ قبل الفتح</b><span>مدة العدّ التنازلي بالثواني</span></li><li><b>حجب بشاشة تنبيه</b><span>إيقاف = بلا شاشة، فقط إشعار بعد فتح التطبيق</span></li></ul>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>حرّك منزلق التوقف إلى مدة بالثواني، وشغّل «حجب بشاشة تنبيه» إن أردت الشاشة.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>اسحب المنزلق حتى تظهر كلمة «معطّل». وأطفئ المفتاح للاكتفاء بالإشعار.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-set-pause-b.webp" alt="تكرار الفتح والسهر والحد اليومي داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>تكرار الفتح والسهر والحد اليومي</h4><p>تنبيهات ذكية تتدخل عندما تبالغ.</p><ul class="ctl"><li><b>تكرار الفتح</b><span>نبّهني عند N مرات (1–30) خلال مدة (10–180 دقيقة). مثلاً 8 مرات في 60 دقيقة</span></li><li><b>تنبيه السهر</b><span>بين منتصف الليل والخامسة فجراً يطلب منك النوم</span></li><li><b>الحد اليومي لكل تطبيق</b><span>حتى 100 مرة. بعده تظهر الشاشة في كل مرة برسالة أشد، لكنه حد ناعم وتبقى أنت المتحكم</span></li><li><b>مدة الانتظار في شاشة التنبيه</b><span>كم ثانية تنتظر قبل أن يظهر زر المتابعة</span></li><li><b>هدف اليوم</b><span>مجموع مرات الفتح؛ الأيام تحت الهدف تزيد سلسلتك</span></li></ul>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>اضبط المنزلقات على القيم التي تريدها.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئ «تنبيه السهر» بالمفتاح، وأوقف البقية بسحب المنزلق إلى «معطّل».</dd></div></dl></div></article></section><section class="fgroup" id="g-brain"><header><h3>صحة الدماغ</h3><p>الإعدادات ← «صحة الدماغ». أدوات ضد التصفح الآلي، فعّل ما يفيدك.</p></header><article class="feat">
+<figure class="shot"><img src="img-set-brain-a.webp" alt="اسأل عن السبب قبل الفتح داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>اسأل عن السبب قبل الفتح</h4><p>قبل كل تطبيق سؤال واحد: هل أحتاجه أم أشعر بالملل فقط؟ الحاجة تمر مباشرة، والملل يعرض شاشة التوقف مع بدائل. مواجهة النفس بالسؤال تُضعف العادة.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>المفتاح بدائرة رمادية فاتحة = مفعّل، والدائرة الداكنة = متوقف. شغّل المفتاح.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئه.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-set-brain-b.webp" alt="جلسات تركيز صارمة داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>جلسات تركيز صارمة</h4><p>أثناء جلسة التركيز تُزال خيارات «افتح رغم ذلك»، فلا مخرج إلا الانتظار.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>شغّل المفتاح.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئه.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-set-brain-c.webp" alt="تذكير راحة العين داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>تذكير راحة العين</h4><p>بعد فتح تطبيق بمدة (10–60 دقيقة) يصلك إشعار: انظر لمسافة بعيدة 20 ثانية وتمدد وتوقف إن كنت ما زلت تتصفح. التطبيق لا يرى مدة بقائك الحقيقية، لذلك يحسب من لحظة الفتح.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>اضبط المنزلق على عدد الدقائق.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>اسحب المنزلق حتى تظهر كلمة «معطّل».</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-set-brain-d.webp" alt="تذكير الاستعداد للنوم داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>تذكير الاستعداد للنوم</h4><p>كل مساء في الساعة التي تختارها: ملخص أرقام يومك وتذكير بإبعاد الهاتف عن السرير.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>شغّل المفتاح ثم اضبط «ذكّرني عند».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئ المفتاح.</dd></div></dl></div></article></section><section class="fgroup" id="g-notif"><header><h3>النصائح والإشعارات</h3><p>الإعدادات ← «النصائح والإشعارات». أول مرة يطلب أندرويد السماح بالإشعارات؛ اسمح بها وإلا لن تصلك.</p></header><article class="feat">
+<figure class="shot"><img src="img-set-notif-a.webp" alt="نصائح الصحة الرقمية داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>نصائح الصحة الرقمية</h4><p>نصيحة عشوائية من أكثر من 200 نصيحة عبر إشعار هادئ. تختار كل كم ساعة تصلك.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>شغّل «نصائح الصحة الرقمية» واضبط «أرسل نصيحة كل».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئ المفتاح.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-set-notif-b.webp" alt="قليل من السخرية داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>قليل من السخرية</h4><p>بين الحين والآخر تصلك نصيحة بنبرة ساخرة لتوقظك من التصفح الآلي، وتبدو كأي نصيحة أخرى.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>شغّل المفتاح.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئه لتبقى النصائح جادة فقط.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-set-notif-c.webp" alt="ساعات الهدوء داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>ساعات الهدوء</h4><p>لا نصائح خلال الساعات التي تحددها (مثلاً من 1:00 إلى 7:00).</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>شغّل المفتاح واضبط «الهدوء من» و«الهدوء حتى».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئ المفتاح.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-set-notif-d.webp" alt="إشعار عداد الفتح + نصيحة الآن داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>إشعار عداد الفتح + نصيحة الآن</h4><p>بعد كل فتح ملاحظة هادئة: كم مرة اليوم. وزر «أرسل لي نصيحة الآن» يجرّب الإشعارات فوراً.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>شغّل «إشعار عداد الفتح».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئه.</dd></div></dl></div></article></section><section class="fgroup" id="g-extras"><header><h3>ميزات إضافية</h3><p>الإعدادات ← «ميزات إضافية». كلها اختيارية: كل واحدة متوقفة حتى تفعّلها، والخلط يعمل كما هو معها أو بدونها.</p></header><article class="feat">
+<figure class="shot"><img src="img-x-sleep.webp" alt="ساعات نومي الخاصة داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>ساعات نومي الخاصة</h4><p>أخبر التطبيق متى تنام (مثلاً بعد نوبة ليلية من 08:00 إلى 15:00). فيتبع تحذير الليل وعدّ الليل في درجة العقل وتذكيرات الماء والحركة نومك الفعلي بدل ليل ثابت. مفيدة جداً لأصحاب النوبات.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>شغّل المفتاح واضبط «أنام من» و«أنام حتى».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئ المفتاح.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-x-smart.webp" alt="انتظار ذكي قبل التطبيقات داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>انتظار ذكي قبل التطبيقات</h4><p>كلما زاد تشتيت التطبيق طال الانتظار قبل فتحه: 3 ثوانٍ للمراسلة وحتى 15 ثانية للفيديوهات القصيرة. التطبيقات المحايدة تفتح فوراً. رغبة التمرير تخفت خلال ثوانٍ، فانتظار أطول لأسوأ التطبيقات يوقف كثيراً من الفتحات.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>شغّل المفتاح.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئه.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-x-screen.webp" alt="هدف وقت الشاشة اليومي داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>هدف وقت الشاشة اليومي</h4><p>يقيس الدقائق الحقيقية في تطبيقاتك المشتتة وينبهك عند تجاوز الهدف. عشر فتحات من دقيقة تختلف عن فتحة لثلاث ساعات، والوقت وحده يكشف ذلك.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>شغّل المفتاح، اضغط الزر الذي يفتح شاشة أندرويد ثم اسمح لـ FocusShuffle بالوصول إلى بيانات الاستخدام، واضبط «هدف الوقت يومياً».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئ المفتاح. ولسحب الإذن: إعدادات أندرويد ← التطبيقات ← الوصول الخاص ← الوصول إلى بيانات الاستخدام.</dd></div></dl><p class="note">لا شيء يغادر هاتفك؛ هذا الإذن يقرأ أوقات الاستخدام محلياً فقط.</p></div></article><article class="feat">
+<figure class="shot"><img src="img-x-weekly.webp" alt="تقرير أسبوعي داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>تقرير أسبوعي</h4><p>إشعار واحد كل مساء أحد يقارن هذا الأسبوع بالأسبوع الماضي. التقدم بطيء ويصعب الإحساس به يوماً بيوم، والمقارنة تظهره.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>شغّل المفتاح.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئه.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-x-bored.webp" alt="نمط الملل داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>نمط الملل</h4><p>كل مرة تجيب «ملل فقط» تُحفظ الساعة، وتعرض الرئيسية أكثر الأوقات التي يهاجمك فيها الملل لتخطط لشيء آخر فيها.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>فعّل أولاً «اسأل عن السبب قبل الفتح» (قسم صحة الدماغ) ثم شغّل هذا المفتاح.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئه.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-x-breath.webp" alt="نغمة هادئة أثناء التنفس داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>نغمة هادئة أثناء التنفس</h4><p>نغمة لطيفة عند كل شهيق وزفير، فتتابع الصوت وعيناك مغمضتان بدل الشاشة.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>شغّل المفتاح.</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئه.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-x-water.webp" alt="تذكير شرب الماء داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>تذكير شرب الماء</h4><p>إشعار لطيف كل 1–4 ساعات، وأنت مستيقظ فقط. العطش الخفيف يشبه التعب والملل، وهما ما يدفعك للهاتف.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>شغّل المفتاح واضبط «الماء كل».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئه.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-x-move.webp" alt="تذكير الحركة والتمدد داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>تذكير الحركة والتمدد</h4><p>إشعار كل 30–120 دقيقة للوقوف أو المشي أو التمدد، وأنت مستيقظ فقط.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>شغّل المفتاح واضبط «الحركة كل».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئه.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-x-morning.webp" alt="صباح بلا هاتف داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>صباح بلا هاتف</h4><p>لفترة بعد استيقاظك (15–120 دقيقة) يظهر لكل تطبيق مشتت شاشة توقف أولاً، لتقضي أولى دقائق اليوم في الماء والضوء والتخطيط لا في التمرير.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>شغّل المفتاح واضبط «يبدأ صباحي عند» و«بلا هاتف لمدة».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئه.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-x-ideas.webp" alt="أفكاري الخاصة في شاشة التوقف داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>أفكاري الخاصة في شاشة التوقف</h4><p>اكتب قائمتك (فكرة في كل سطر) مثل «اتصل بأمك» أو «اقرأ 5 صفحات»، فتعرضها شاشة التوقف بدل الاقتراحات العامة. فكرة كتبتها بنفسك أرجح أن تنجح.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>شغّل المفتاح ثم اضغط «تعديل قائمتي».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>أطفئ المفتاح.</dd></div></dl></div></article></section><section class="fgroup" id="g-backup"><header><h3>النسخ الاحتياطي وإعادة الضبط</h3><p>في آخر صفحة الإعدادات.</p></header><article class="feat">
+<figure class="shot"><img src="img-x-backup.webp" alt="نسخة احتياطية داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>نسخة احتياطية</h4><p>يحفظ ملفاً بكل شيء: الصفحات والإعدادات والأسماء والمستويات والإحصاءات والأيقونات. استعده بعد إعادة التثبيت أو على هاتف جديد. الأدوات تُضاف من جديد.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>«حفظ ملف النسخة» ثم احتفظ بالملف خارج الهاتف. للاسترجاع «استعادة من ملف».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>لا يعمل تلقائياً؛ يحدث فقط حين تضغط.</dd></div></dl></div></article><article class="feat">
+<figure class="shot"><img src="img-x-reset.webp" alt="إعادة ضبط المظهر داخل تطبيق FocusShuffle" loading="lazy" decoding="async"></figure>
+<div class="txt"><h4>إعادة ضبط المظهر</h4><p>يعيد الحجم والأعمدة والصفوف الافتراضية والخلفية الشفافة. لا يمسّ تطبيقاتك ولا إحصاءاتك.</p>
+<dl class="how"><div class="on"><dt>كيف تفعّله</dt><dd>اضغط «إعادة الضبط».</dd></div><div class="off"><dt>كيف توقفه</dt><dd>لا رجعة تلقائية بعدها؛ أعد ضبط المنزلقات يدوياً.</dd></div></dl></div></article></section>
+  </div>
+</section>
+
+<section class="block alt" id="privacy">
+  <div class="wrap">
+    <h2>الخصوصية والأذونات</h2>
+    <p class="sec-lead">لا يطلب التطبيق إذن الإنترنت أصلاً، فلا يستطيع إرسال شيء خارج هاتفك. يمكنك التأكد بنفسك: إعدادات أندرويد ← التطبيقات ← FocusShuffle ← الأذونات.</p>
+    <div class="tscroll"><table class="perm">
+      <thead><tr><th>الإذن</th><th>لماذا</th><th>إلزامي؟</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">الإشعارات</th><td>للنصائح والتذكيرات ونتائج جلسات التركيز</td><td>لا، لكن دونه لا تصل التذكيرات</td></tr>
+        <tr><th scope="row">خدمة صغيرة في الخلفية</th><td>تستمع لفتح قفل الهاتف لميزة «اخلط عند فتح القفل»</td><td>لا، تعمل فقط إن فعّلتها</td></tr>
+        <tr><th scope="row">بدء التشغيل بعد إعادة التشغيل</th><td>لإعادة جدولة المؤقتات والتذكيرات</td><td>تلقائي</td></tr>
+        <tr><th scope="row">بيانات الاستخدام</th><td>لقياس وقت الشاشة الحقيقي في «هدف وقت الشاشة اليومي»</td><td>لا، تمنحه أنت يدوياً من إعدادات أندرويد</td></tr>
+      </tbody>
+    </table></div>
+    <ul class="plain pr">
+      <li>لا إعلانات، ولا متتبعات، ولا تحليلات، ولا حساب مستخدم.</li>
+      <li>كل شيء، بما فيه أيقوناتك وأرقامك، يبقى على هاتفك.</li>
+      <li>التطبيق يرى قائمة التطبيقات القابلة للفتح فقط ليعرضها لك، دون صلاحية «كل التطبيقات».</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block download" id="download">
+  <div class="wrap">
+    <div class="dl-card">
+      <img class="dl-icon" src="icon-192.png" alt="" width="96" height="96">
+      <div class="dl-body">
+        <h2>حمّل FocusShuffle</h2>
+        <p>نسخة أندرويد جاهزة للتثبيت. مجانية بالكامل.</p>
+        <a class="btn big" href="FocusShuffle-v0.6.1.apk" download data-download>
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3v10.2l3.6-3.6 1.4 1.4-6 6-6-6 1.4-1.4 3.6 3.6V3h2zM5 19h14v2H5z"/></svg>
+          حمّل التطبيق (APK)
+        </a>
+        <dl class="spec">
+          <div><dt>الإصدار</dt><dd>0.6.1</dd></div>
+          <div><dt>الحجم</dt><dd>1.3 ميغابايت</dd></div>
+          <div><dt>يتطلب</dt><dd>أندرويد 8.0 فأحدث</dd></div>
+          <div><dt>اللغة</dt><dd>العربية</dd></div>
+        </dl>
+        <details class="sha"><summary>تحقق من سلامة الملف (SHA-256)</summary>
+          <code id="shaText">83426b9f95ff7d5892e12c9f93e23215a6bb2882cb9ce354e2560b653c5a7e64</code>
+          <p>بعد التحميل يمكنك مقارنة بصمة الملف بهذه القيمة بأي تطبيق يحسب SHA-256 للتأكد أنه لم يتغير.</p>
+        </details>
+        <p class="upd">للتحديث: حمّل الإصدار الجديد وثبّته فوق القديم، فتبقى إعداداتك لأن التوقيع واحد.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="faq">
+  <div class="wrap narrow">
+    <h2>أسئلة شائعة</h2>
+    <details><summary>لماذا يظهر تحذير عند التثبيت؟</summary><p>التطبيق غير منشور على متجر Google Play، ومطوّره غير معروف لدى Google، فيعرض Play Protect تحذيراً عاماً لأي تطبيق بهذه الصفة. ليس لأنه اكتُشف فيه شيء. والتطبيق بلا إذن إنترنت أصلاً. اتبع الخطوات في الملاحظة التي تظهر بعد التحميل.</p></details>
+    <details><summary>هل يحجب التطبيقات أو يمنعني منها؟</summary><p>لا. لا يمنع شيئاً بالقوة. يضيف احتكاكاً ووعياً فقط، وأنت المتحكم دائماً بخيار «افتح رغم ذلك» (إلا إن فعّلت جلسات التركيز الصارمة).</p></details>
+    <details><summary>هل يعمل بدون إنترنت؟</summary><p>نعم، كله يعمل دون اتصال، ولا يملك إذن الإنترنت.</p></details>
+    <details><summary>هل يستهلك البطارية؟</summary><p>هو خفيف. الميزة الوحيدة التي تُبقي خدمة صغيرة في الخلفية هي «اخلط عند فتح القفل»، وهي متوقفة حتى تفعّلها.</p></details>
+    <details><summary>هل يعمل على آيفون؟</summary><p>لا، هو لأندرويد فقط (8.0 فأحدث).</p></details>
+    <details><summary>اختفت الأداة بعد إعادة تشغيل الهاتف أو تغيير المشغل</summary><p>احذف الأداة وأضفها من جديد واختر الصفحة. وتأكد أن إعدادات توفير الطاقة لا توقف التطبيق بالقوة.</p></details>
+    <details><summary>كيف أنقل إعداداتي لهاتف جديد؟</summary><p>الإعدادات ← «حفظ ملف النسخة»، ثم على الهاتف الجديد «استعادة من ملف». الأدوات تُضاف من جديد.</p></details>
+    <details><summary>كيف أحذف التطبيق؟</summary><p>مثل أي تطبيق: اضغط مطولاً على أيقونته ← إلغاء التثبيت. وكل بياناته تُحذف معه. لا تنسَ إعادة أيقونات تطبيقاتك الأصلية إلى الشاشة الرئيسية إن أردت.</p></details>
+  </div>
+</section>
+
+<section class="block tg" id="telegram">
+  <div class="wrap">
+    <div class="tg-card">
+      <div>
+        <h2>تابع التحديثات على تلجرام</h2>
+        <p>الإصدارات الجديدة والميزات والإصلاحات تُنشر أولاً في قناتي. ويمكنك إرسال ملاحظاتك واقتراحاتك هناك.</p>
+      </div>
+      <a class="btn big tgb" href="https://t.me/dineahmed055" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.9 4.3 18.6 20c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8 8.8-8c.4-.3-.1-.5-.6-.2L6.5 13.8l-4.7-1.5c-1-.3-1-1 .2-1.5L20.400 3.800c.9-.3 1.600.2 1.500 1z"/></svg>
+        قناة تلجرام @dineahmed055
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><b>FocusShuffle</b> — من تطوير أحمد دين.<br><small>تطبيق للعادات الرقمية، وليس علاجاً طبياً. اسم Android وGoogle Play علامتان لأصحابهما.</small></div>
+    <div class="links"><a href="https://t.me/dineahmed055" target="_blank" rel="noopener">تلجرام</a><a href="https://instagram.com/dineahmed05" target="_blank" rel="noopener">إنستغرام</a><a href="#top">أعلى الصفحة</a></div>
+  </div>
+</footer>
+
+<div class="modal" id="dlModal" role="dialog" aria-modal="true" aria-labelledby="dlTitle" hidden>
+  <div class="modal-card">
+    <button class="x" type="button" aria-label="إغلاق" data-close>×</button>
+    <h2 id="dlTitle">بدأ التحميل ✓</h2>
+    <div class="warn">
+      <h3>ملاحظة مهمة قبل التثبيت</h3>
+      <p>قد يعتبر Google Play Protect هذا التطبيق «خطيراً» أو «غير معروف». السبب أنه ليس على المتجر ومطوّره غير معروف لدى Google، وليس لأن فيه شيئاً ضاراً. التطبيق لا يملك إذن الإنترنت أصلاً ولا يحتوي إعلانات ولا تتبعاً.</p>
+    </div>
+    <ol class="mstep">
+      <li><b>ملف التحميل:</b> إن حذّر المتصفح «قد يكون هذا الملف ضاراً» فاختر «تنزيل على أي حال» أو «الاحتفاظ».</li>
+      <li><b>افتح الملف</b> من إشعار التنزيلات أو من تطبيق «الملفات». وإن سألك أندرويد عن «تثبيت التطبيقات غير المعروفة» فاسمح لهذا المتصفح من نافذة الإعدادات ثم ارجع.</li>
+      <li>إن ظهرت رسالة <b>«تم حظر التطبيق»</b> أو «تطبيق غير شائع»: اضغط <b>«عرض المزيد»</b> (أو «مزيد من التفاصيل»).</li>
+      <li>ثم اضغط <b>«تثبيت على أي حال»</b>.</li>
+      <li>وإن ظهر طلب فحص التطبيق فيمكنك اختيار «عدم الإرسال» ثم «تثبيت».</li>
+    </ol>
+    <p class="mnote">على بعض أجهزة سامسونج: إن منع «المانع التلقائي» (Auto Blocker) التثبيت فعطّله مؤقتاً من الإعدادات ← الأمان والخصوصية، ثم أعده بعد التثبيت. تختلف أسماء الأزرار قليلاً بحسب الهاتف والإصدار.</p>
+    <div class="mact"><a class="btn" href="#use" data-close>ثم كيف أستعمله؟</a><a class="btn ghost" href="FocusShuffle-v0.6.1.apk" download>لم يبدأ التحميل؟ حمّله ثانية</a></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
